@@ -23,12 +23,11 @@ class CarController extends BaseController
         $request->booked=0;
         $request->available=0;
         $input = $request->all();
-//        $imput['booked']=0;
-//        $imput['available']=0;
         $validator = Validator::make($input, [
             "model" => "required|unique:cars",
             "brand" => "required",
             "stock" => "required|numeric|min:0"
+
         ]);
         if($validator->fails()){
             return $this->handleError($validator->errors());
@@ -71,11 +70,12 @@ class CarController extends BaseController
     public function update(Request $request, Car $car)
     {
         $input = $request->all();
-
+        $value=$request->input('stock');
         $validator = Validator::make($input, [
             "model" => "required",
             "brand" => "required",
-            "stock" => "required|numeric|min:0"
+            "stock" => "required|numeric|min:0",
+           "booked" => "numeric|lte:$value|min:0"
         ]);
 
         if($validator->fails()){

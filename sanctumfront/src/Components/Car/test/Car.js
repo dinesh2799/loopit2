@@ -107,26 +107,26 @@ const Car = () => {
   return (
     <div className='car-container'>
         <div className='car-inner'>
-    <div className="container" >
-    <div className="row">
-        <div className="col-md-12">
-            <div className="card">
-                <div className="card-header">
-                    <h4>All CARS
-                        <Link to={'addcar'} className="btn btn-primary btn-sm float-end"> Add Car</Link>
-                    </h4>
-                </div>
-                <div className="card-body">
+            <div className="container" >
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="card">
+                            <div className="card-header">
+                                <h4>All CARS
+                                    <Link to={'addcar'} className="btn btn-primary btn-sm float-end"> Add Car</Link>
+                                </h4>
+                            </div>
+                            <div className="card-body">
 
-      <BootstrapTable striped hover  bootstrap4 keyField='id' columns={columns} data={cars} pagination={pagination} filter={filterFactory()} />
+                            <BootstrapTable striped hover  bootstrap4 keyField='id' columns={columns} data={cars} pagination={pagination} filter={filterFactory()} />
   
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
-  </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
   )
 };
 
