@@ -37,6 +37,7 @@ export default class Nav extends Component{
         }
     
     return (
+        <div>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top bg-light">
         <div className='container'>
             <Link className="navbar-brand" to={'/home'}>Home</Link>
@@ -46,6 +47,8 @@ export default class Nav extends Component{
         </div>
 
         </nav>
+        </div>
+        
     );
 }
 };

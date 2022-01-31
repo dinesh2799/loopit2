@@ -17,7 +17,10 @@ const Viewcars = () => {
         axios.get(`api/cars`).then(res=>{
             if(res.status === 200)
             {
-                console.log(res)
+                console.log(res.data.data)
+                // const items = res.data.data
+                // const jsondata = JSON.stringify(items)
+                // console.log(jsondata)
                 setCars(res.data.data)
                 console.log(cars)
                 setLoading(false);
@@ -74,8 +77,6 @@ const Viewcars = () => {
 
   return (
     <div>
-        {/* <div className="col-xl-3 col-sm-12 col-md-3">
-        </div> */}
         <div className="container">
             <div className="row">
                 <div className="col-md-12">

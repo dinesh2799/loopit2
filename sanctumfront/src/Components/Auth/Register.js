@@ -45,47 +45,52 @@ const Register = () => {
         
     }
   return  (
-<form onSubmit={handleSubmit}>
-      <h3>Sign Up</h3>
+    <div className='auth-wrapper'>
+    <div className='auth-inner'>
 
-      <div className='form-group'>
-          <label>Name</label>
-            <input type="text" className='form-control' placeholder='Enter your name'
-            value={name} onChange={(e) => setName(e.target.value)}/>
-            <span className="text-danger">{nameError}</span>
-      </div>
+        <form onSubmit={handleSubmit}>
+            <h3>Sign Up</h3>
 
-      <div className='form-group'>
-          <label>Email</label>
-            <input type="email" className='form-control' placeholder='Enter your email'
-            value={email} onChange={(e) => setEmail(e.target.value)}
-            />
-            <span> </span>
-            <span className="text-danger">{emailError}</span>
-      </div>
+            <div className='form-group'>
+                <label>Name</label>
+                    <input type="text" className='form-control' placeholder='Enter your name'
+                    value={name} onChange={(e) => setName(e.target.value)}/>
+                    <span className="text-danger">{nameError}</span>
+            </div>
 
-      <div className='form-group'>
-          <label>Password</label>
-            <input type="password" className='form-control' placeholder='Enter password'
-             value={password} onChange={(e) => setPassword(e.target.value)}
-             />
-             <span className="text-danger">{passwordError}</span>
-      </div>
+            <div className='form-group'>
+                <label>Email</label>
+                    <input type="email" className='form-control' placeholder='Enter your email'
+                    value={email} onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <span> </span>
+                    <span className="text-danger">{emailError}</span>
+            </div>
 
-      <div className='form-group'>
-          <label>Confirm Password</label>
-            <input type="password" className='form-control' placeholder='Confirm password'
-            value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
-            <span className="text-danger">{confirmpasswordError}</span>
-      </div><br></br>
+            <div className='form-group'>
+                <label>Password</label>
+                    <input type="password" className='form-control' placeholder='Enter password'
+                    value={password} onChange={(e) => setPassword(e.target.value)}
+                    />
+                    <span className="text-danger">{passwordError}</span>
+            </div>
 
-      <div className='form-group'>
-        <button className='btn btn-primary btn-block form-control' >
-            Sign Up
-        </button>
-      </div>
-     
-  </form>
+            <div className='form-group'>
+                <label>Confirm Password</label>
+                    <input type="password" className='form-control' placeholder='Confirm password'
+                    value={confirmpassword} onChange={(e) => setConfirmPassword(e.target.value)}/>
+                    <span className="text-danger">{confirmpasswordError}</span>
+            </div><br></br>
+
+            <div className='form-group'>
+                <button className='btn btn-primary btn-block form-control' >
+                    Sign Up
+                </button>
+            </div>
+            
+        </form>
+
+        </div></div>
   );
   
 };

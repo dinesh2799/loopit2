@@ -14,6 +14,7 @@ import Editcar from './Components/Car/Editcar';
 import PageNotFound from './Components/PageNotFound';
 import PrivateRoute from './PrivateRoute';
 import Showcars from './Components/Car/Showcars';
+import Car from './Components/Car/test/Car';
 
 export default class App extends Component {
 
@@ -41,12 +42,12 @@ export default class App extends Component {
       <BrowserRouter>
       <div className="App">
         <Nav  user={this.state.user} setUser= {this.setUser} />
-        <div className='auth-wrapper'>
-          <div className='auth-inner'>
+        {/* <div className='auth-wrapper'>
+          <div className='auth-inner'> */}
             <Routes>
-              
+
                 <Route exact path='/cars' element={<PrivateRoute/>}>
-                    <Route exact path='/cars' element= {<Viewcars user = {this.state.user} />} />
+                    <Route exact path='/cars' element= {<Car user = {this.state.user} />} />
                     <Route  exact path="/cars/addcar" element={<Addcar  user = {this.state.user}/>} />
                     <Route exact path= "/cars/editcar/:id" element={<Editcar user = {this.state.user} />} />
                 </Route>
@@ -56,12 +57,13 @@ export default class App extends Component {
                 <Route exact path='/' element= {  <Home user = {this.state.user}/>} />
                 <Route exact path='/login' element= {<Login setUser= {this.setUser} />} />
                 <Route exact path='/register' element= {<Register/>} />
+                {/* <Route exact path= '/carpage' element = {<Car /> } /> */}
                 
                 <Route path="*" element={<PageNotFound />} />
 
             </Routes>
-          </div>
-        </div>
+          {/* </div>
+        </div> */}
         
       </div>
       </BrowserRouter>

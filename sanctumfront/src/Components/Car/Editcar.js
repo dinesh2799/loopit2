@@ -68,7 +68,8 @@ const Editcar = () => {
     }
 
     return (
-        <div>
+        <div className='car-container'>
+        <div className='car-inner'>
             <div className="container">
                 <div className="row justify-content-center">
                     <div className="col-md-12">
@@ -111,6 +112,7 @@ const Editcar = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 };

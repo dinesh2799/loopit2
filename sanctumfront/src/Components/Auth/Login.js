@@ -47,6 +47,8 @@ const Login = ({setUser}) => {
     }
 
   return(
+    <div className='auth-wrapper'>
+    <div className='auth-inner'>
             <form onSubmit={handleSubmit}>
                 <h3>Log In</h3>
                 <div className='form-group'>
@@ -67,6 +69,7 @@ const Login = ({setUser}) => {
                     Login
                 </button>
             </form>
+    </div></div>
   );
 };
 
