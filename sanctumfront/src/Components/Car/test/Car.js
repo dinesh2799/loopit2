@@ -57,7 +57,7 @@ const Car = () => {
         {dataField:'booked', text:'Booked',sort:true, filter:textFilter()},
         {dataField:'available', text:'In Stock',sort:true, filter:textFilter()},
         {
-            dataField: "databasePkey",
+            dataField: "edit",
             text: "Edit",
             formatter: (cellContent, row) => {
                 return (
@@ -66,7 +66,7 @@ const Car = () => {
             },
         },
         {
-            dataField: "databasePkey",
+            dataField: "delete",
             text: "Delete",
             formatter: (cellContent, row) => {
                 return (
