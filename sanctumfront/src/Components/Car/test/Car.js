@@ -24,13 +24,13 @@ const Car = () => {
                 // console.log(res.data.data)
                 const items = res.data.data
                 const jsondata = JSON.stringify(items)
-                console.log(jsondata)
+                // console.log(jsondata)
                 setCars(items)
                 setLoading(false);
             }
         });
     }, []);
-    console.log(cars)
+    // console.log(cars)
 
       
       const deleteCar = (e, id) => {
@@ -41,7 +41,7 @@ const Car = () => {
 
         axios.delete(`api/cars/${id}`).then(
             res=>{
-                console.log(res)
+                // console.log(res)
                 thisClicked.closest("tr").remove();
                 swal("Deleted!",res.data.message,"success");
                 navigate('/cars');
@@ -93,12 +93,12 @@ const Car = () => {
         showTotal:true,
         alwaysShowAllBtns:true,
         onPageChange: function(page, sizePerPage){
-            console.log('page',page)
-            console.log('sizeperpage',sizePerPage)
+            // console.log('page',page)
+            // console.log('sizeperpage',sizePerPage)
         },
         onSizePerPageChange: function(page, sizePerPage){
-            console.log('page',page)
-            console.log('sizePerPage',sizePerPage)
+            // console.log('page',page)
+            // console.log('sizePerPage',sizePerPage)
         }
     })
 

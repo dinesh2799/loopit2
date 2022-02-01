@@ -22,14 +22,12 @@ const Login = ({setUser}) => {
         axios.post('api/login',data).then(
             res => {
                 // console.log(res)
-                // if(res.data.success)
-                // {
                     localStorage.setItem('token',res.data.data.token)
                     localStorage.setItem("isLoggedIn", true);
+                    
                     setUser(res.data.data)
                     swal("Success!",res.data.message,"success");
                     navigate('/home', { state: setUser });
-                // }
                 
             }
         ).catch(

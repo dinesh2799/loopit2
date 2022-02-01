@@ -7,9 +7,9 @@ export default class Home extends Component{
     
     render()
     {
-        console.log(this.props.user);
+        // console.log(this.props.user);
         if(this.props.user){
-            console.log(this.props.user.role);
+            // console.log(this.props.user.role);
             if(this.props.user.role == 1)
             { 
                 return(

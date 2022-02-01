@@ -8,13 +8,14 @@ import Nav from './Components/Nav';
 import Login from './Components/Auth/Login';
 import Register from './Components/Auth/Register';
 import axios from 'axios';
-import Viewcars from './Components/Car/Viewcars';
+// import Viewcars from './Components/Car/Viewcars';
 import Addcar from './Components/Car/Addcar';
 import Editcar from './Components/Car/Editcar';
 import PageNotFound from './Components/PageNotFound';
 import PrivateRoute from './PrivateRoute';
 import Showcars from './Components/Car/Showcars';
 import Car from './Components/Car/test/Car';
+import AdminRoute from './AdminRoute';
 
 export default class App extends Component {
 
@@ -22,10 +23,19 @@ export default class App extends Component {
   componentDidMount = () => {
       axios.get('api/user').then(
           res => {
+            // console.log(res.data.role)
+            if(res.data.role==1)
+            {
+                localStorage.setItem("admin",true)
+            }
+            if(res.data.role==0)
+            {
+              localStorage.setItem("admin",false)
+            }
               this.setUser(res.data)
           },
           err => {
-              console.log(err);
+              // console.log(err);
           }
       )
   }
@@ -46,7 +56,7 @@ export default class App extends Component {
           <div className='auth-inner'> */}
             <Routes>
 
-                <Route exact path='/cars' element={<PrivateRoute/>}>
+                <Route exact path='/cars' element={<AdminRoute/>}>
                     <Route exact path='/cars' element= {<Car user = {this.state.user} />} />
                     <Route  exact path="/cars/addcar" element={<Addcar  user = {this.state.user}/>} />
                     <Route exact path= "/cars/editcar/:id" element={<Editcar user = {this.state.user} />} />
