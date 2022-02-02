@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 const Showcars = ({user}) => {
-    console.log({user})
+    // console.log({user})
 
     const [loading, setLoading] = useState(true);
     const [cars, setCars] = useState([]);
@@ -43,7 +43,8 @@ const Showcars = ({user}) => {
 
     if({user}){
         return (
-            <div>
+            <div className='car-container'>
+                <div className='car-inner'>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -72,6 +73,7 @@ const Showcars = ({user}) => {
                         </div>
                     </div>
                 </div>
+            </div>
             </div>
           )
     }

@@ -50,13 +50,13 @@ const Editcar = () => {
     
         axios.put(`api/cars/${car_id}`,data).then(
             res => {
-                console.log(res)
+                // console.log(res)
                 swal("Success!",res.data.message,"success");
                 navigate('/cars');
             }
         ).catch(
             err => {
-                console.log(err.response.data)
+                // console.log(err.response.data)
                 setError(err.response.data.message);
             }
         )

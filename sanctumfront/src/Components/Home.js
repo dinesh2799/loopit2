@@ -1,4 +1,4 @@
-import { Button } from "bootstrap";
+// import { Button } from "bootstrap";
 import React, {Component} from "react";
 import { Link } from "react-router-dom";
 // import axios from 'axios'
@@ -10,7 +10,7 @@ export default class Home extends Component{
         // console.log(this.props.user);
         if(this.props.user){
             // console.log(this.props.user.role);
-            if(this.props.user.role == 1)
+            if(this.props.user.role === 1)
             { 
                 return(
                     <div className='auth-wrapper'>

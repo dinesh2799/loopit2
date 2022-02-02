@@ -69,6 +69,7 @@ body,html, .App, #root, .auth-wrapper {
 }
 
 .car-container {
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   flex-direction: column;

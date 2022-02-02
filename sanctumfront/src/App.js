@@ -24,11 +24,11 @@ export default class App extends Component {
       axios.get('api/user').then(
           res => {
             // console.log(res.data.role)
-            if(res.data.role==1)
+            if(res.data.role===1)
             {
                 localStorage.setItem("admin",true)
             }
-            if(res.data.role==0)
+            if(res.data.role===0)
             {
               localStorage.setItem("admin",false)
             }
@@ -62,7 +62,11 @@ export default class App extends Component {
                     <Route exact path= "/cars/editcar/:id" element={<Editcar user = {this.state.user} />} />
                 </Route>
 
+                <Route exact path='/cars' element={<PrivateRoute/>}>
                 <Route exact path='/cars/all' element= {<Showcars user = {this.state.user} />} />
+                </Route>
+
+                
                 <Route exact path='/home' element= {  <Home user = {this.state.user}/>} />
                 <Route exact path='/' element= {  <Home user = {this.state.user}/>} />
                 <Route exact path='/login' element= {<Login setUser= {this.setUser} />} />

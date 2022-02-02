@@ -24,17 +24,17 @@ const Register = () => {
             password : password,
             confirm_password : confirmpassword
         }
-        console.log(data)
+        // console.log(data)
 
         axios.post('api/register',data).then(
             res => {
-                console.log(res)
+                // console.log(res)
                 swal("Success!",res.data.message,"success");
                 navigate('/login');
             }
         ).catch(
             err => {
-                console.log(err.response.data)
+                // console.log(err.response.data)
                 setNameError(err.response.data.message.name)
                 setEmailError(err.response.data.message.email)
                 setPasswordError(err.response.data.message.password)

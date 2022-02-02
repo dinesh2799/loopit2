@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 
 const Car = () => {
 
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
     const [cars, setCars] = useState([]);
     const navigate = useNavigate();
 
@@ -23,10 +23,8 @@ const Car = () => {
             {
                 // console.log(res.data.data)
                 const items = res.data.data
-                const jsondata = JSON.stringify(items)
-                // console.log(jsondata)
                 setCars(items)
-                setLoading(false);
+                // setLoading(false);
             }
         });
     }, []);

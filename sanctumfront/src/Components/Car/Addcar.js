@@ -29,13 +29,13 @@ const Addcar = () => {
 
         axios.post('api/cars',data).then(
             res => {
-                console.log(res)
+                // console.log(res)
                 swal("Success!",res.data.message,"success");
                 navigate('/cars');
             }
         ).catch(
             err => {
-                console.log(err.response.data)
+                // console.log(err.response.data)
                 setCar({...setInput, error_list: err.response.data.message });
             }
         )
